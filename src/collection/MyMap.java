@@ -1,6 +1,8 @@
 package collection;
 
+import javax.xml.crypto.dsig.keyinfo.KeyValue;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class MyMap {
@@ -8,7 +10,7 @@ public class MyMap {
         HashMap<String, String> hashMap = new HashMap();
         hashMap.put("Shabreen", "beautiful");
         hashMap.put("Sadab", "Aggressive");
-        hashMap.put("Younus", "Overthnker");
+        hashMap.put("Younus", "Overthinker");
 
         System.out.println(hashMap.get("Sadab"));
 
@@ -18,5 +20,12 @@ public class MyMap {
         for(String key: keys){
             System.out.println("key is " + key + " value is " + hashMap.get(key));
         }
+        // 2nd way
+        Set<Map.Entry<String, String>> keyValues= hashMap.entrySet();
+        System.out.println("################ 2nd way #####################");
+        for(Map.Entry<String, String> keyValue: keyValues){
+            System.out.println("key is " + keyValue.getKey() + " value is " + keyValue.getValue());
+        }
+
     }
 }
